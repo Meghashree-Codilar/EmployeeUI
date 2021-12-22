@@ -47,7 +47,7 @@ class EmployeeActions extends Column
                     $item[$this->getData('name')] = [
                         'edit' => [
                             'href' => $this->urlBuilder->getUrl(
-                                'employee/index/edit',
+                                'employee/index/form',
                                 [
                                     'entity_id' => $item['entity_id'],
                                 ]

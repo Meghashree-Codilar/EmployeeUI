@@ -34,7 +34,9 @@ class Save extends Action
     {
         $data = $this->getRequest()->getParams();
         $emptyEmployee = $this->modelFactory->create();
-        $this-> resourceModel->load($emptyEmployee,$data['entity_id']);
+        if(!empty($data['entity_id'])){
+            $this-> resourceModel->load($emptyEmployee,$data['entity_id']);
+        }
         $emptyEmployee->setFirstname($data['firstname'] ?? null);
         $emptyEmployee->setLastname($data['lastname'] ?? null);
         $emptyEmployee->setEmail($data['email'] ?? null);
